@@ -14,7 +14,7 @@ char_dict = dict(zip(chars,chars))
 ################################################################################
 # soupify returns BeautifulSoup
 #
-# tries to download the html for a url and returns BeautifulSoup upon success
+# tries to download the HTML for a URL and returns BeautifulSoup upon success
 # otherwise it returns None on failure
 ################################################################################
 def soupify(url):
@@ -61,7 +61,7 @@ def printWordsOnPage(soup):
 ################################################################################
 # htmlStringToWord returns str
 #
-# takes reserved charater strings from html and returns a "human readable" str
+# takes reserved character strings from html and returns a "human readable" str
 ################################################################################        
 def htmlStringToWord(htmlString):
     if htmlString:
