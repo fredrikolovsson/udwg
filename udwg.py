@@ -50,13 +50,14 @@ def isliEndOfPage(li):
 # this function takes the soup of the page and prints out all the words
 ################################################################################
 def printWordsOnPage(soup):
-    lis = soup.li.findAllNext('li')
-    for li in lis:
-        if isliEndOfPage(li):
-            break
-        if li.a:
-            if li.a.text:
-                 print htmlStringToWord(li.a.text)
+    if soup.li:
+        lis = soup.li.findAllNext('li')
+        for li in lis:
+            if isliEndOfPage(li):
+                break
+            if li.a:
+                if li.a.text:
+                    print htmlStringToWord(li.a.text)
 
 ################################################################################
 # htmlStringToWord returns str
