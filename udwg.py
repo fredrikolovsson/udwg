@@ -1,6 +1,6 @@
 import sys
-import BeautifulSoup
-import urllib2
+from bs4 import BeautifulSoup
+import urllib
 
 ################################################################################
 # globals
@@ -19,16 +19,16 @@ char_dict = dict(zip(chars,chars))
 ################################################################################
 def soupify(url):
     try:
-        response = urllib2.urlopen(url)
-    except urllib2.HTTPError as e:
-        print e
+        response = urllib.urlopen(url)
+    except urllib.HTTPError as e:
+        print(e)
         return None
-    except urllib2.URLError as e:
-        print e
+    except urllib.URLError as e:
+        print(e)
         return None
     else:
         html = response.read()
-        soup = BeautifulSoup.BeautifulSoup(html)
+        soup = BeautifulSoup(html)
         return soup
 
 ################################################################################
@@ -57,7 +57,7 @@ def printWordsOnPage(soup):
                 break
             if li.a:
                 if li.a.text:
-                    print htmlStringToWord(li.a.text)
+                    print(htmlStringToWord(li.a.text))
 
 ################################################################################
 # htmlStringToWord returns str
@@ -66,7 +66,7 @@ def printWordsOnPage(soup):
 ################################################################################        
 def htmlStringToWord(htmlString):
     if htmlString:
-        return BeautifulSoup.BeautifulSoup(htmlString, convertEntities=BeautifulSoup.BeautifulSoup.HTML_ENTITIES)
+        return htmlString
 
 ################################################################################
 # getPageCount returns int
@@ -139,9 +139,9 @@ def getLetters(firstLetter, lastLetter):
 ################################################################################
 def checkArg(argv, i):
     if ( len(argv[i]) != 1 ) or ( not char_dict.has_key(argv[i]) ): 
-        print "Please specify a letter or '*'."
-        print "Argument", str(i), "is not a letter or '*'."
-        print "Argument supplied is too long: ", argv[i]
+        print( "Please specify a letter or '*'." )
+        print( "Argument", str(i), "is not a letter or '*'." )
+        print( "Argument supplied is too long: ", argv[i] )
         sys.exit()
 
 ################################################################################
