@@ -1,6 +1,6 @@
 import sys
 from bs4 import BeautifulSoup
-import urllib
+import urllib.request as urllib
 
 ################################################################################
 # globals
@@ -8,7 +8,7 @@ import urllib
 # chars is a list of all possible chars that can be chosen
 # char_dict is a dictionary of all possible chars that can be chosen
 ################################################################################
-chars = map(chr, range(65,91)) +  map(chr, range(97,123)) + ["*"]
+chars = list(map(chr, range(65,91))) + list(map(chr, range(97,123))) + ["*"]
 char_dict = dict(zip(chars,chars))
 
 ################################################################################
@@ -20,10 +20,7 @@ char_dict = dict(zip(chars,chars))
 def soupify(url):
     try:
         response = urllib.urlopen(url)
-    except urllib.HTTPError as e:
-        print(e)
-        return None
-    except urllib.URLError as e:
+    except Exception as e:
         print(e)
         return None
     else:
@@ -57,7 +54,7 @@ def printWordsOnPage(soup):
                 break
             if li.a:
                 if li.a.text:
-                    print(htmlStringToWord(li.a.text))
+                    print(htmlStringToWord(li.a.text).encode('utf-8'))
 
 ################################################################################
 # htmlStringToWord returns str
@@ -118,9 +115,9 @@ def getLetters(firstLetter, lastLetter):
         firstLetter = firstLetter.upper()
         lastLetter = lastLetter.upper()
         if lastLetter == star:
-            letters = map(chr, range(ord(firstLetter),91)) + ["*"]
+            letters = list(map(chr, range(ord(firstLetter),91))) + ["*"]
         else:
-            letters = map(chr, range(ord(firstLetter),ord(lastLetter)))
+            letters = list(map(chr, range(ord(firstLetter),ord(lastLetter))))
     elif firstLetter:
         firstLetter = firstLetter.upper()
         if firstLetter == star:
@@ -128,7 +125,7 @@ def getLetters(firstLetter, lastLetter):
         else:
             letters = [firstLetter]
     else:
-        letters = map(chr, range(65,91)) + ["*"]
+        letters = list(map(chr, range(65,91))) + ["*"]
     return letters
 
 ################################################################################
