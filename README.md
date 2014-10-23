@@ -60,4 +60,7 @@ I do not condone the use of this data for illicit purposes.
 
 ## Requirements
 
-[Beautifulsoup](http://www.crummy.com/software/BeautifulSoup/)
+I used the following versions of python and corresponding modules for testing.
+
+[Beautifulsoup 4.2.1](http://www.crummy.com/software/BeautifulSoup/)
+[Python 3.3.3](https://www.python.org/download/releases/3.0/)
