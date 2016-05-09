@@ -3,13 +3,11 @@
 Recently I was curious about downloading a wordlist from Urban Dictionary.
 I noticed there was no such list available for download from their website.
 
-I therefore have created this simple Web Scraper which compiles a list of all
-of the available words from Urban Dictionary to date. 
+I therefore have created this simple Web Scraper which compiles a list of
+the most popular words from Urban Dictionary from A to Z
 
 If you are reading this, you probably have a good reason for needing a 
 wordlist from urban dictionary, such as security, NLP, or just plain curiosity.
-
-At this point in time, UDWG will only get the most popular words from A-Z
 
 ## Usage
 
@@ -19,7 +17,7 @@ This program is written in Python and is very easy to use, just simply type:
 
     $> python udwg.py
 
-And all words from Urban Dictionary will be printed out to STDOUT 
+And all words from Urban Dictionary will be printed out
 
 The words are all of the most popular words from Urban Dictionary from A to Z.
 
