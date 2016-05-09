@@ -4,52 +4,31 @@ Recently I was curious about downloading a wordlist from Urban Dictionary.
 I noticed there was no such list available for download from their website.
 
 I therefore have created this simple Web Scraper which compiles a list of all
-of the available words from Urban Dictionary to date. You can also choose ranges
-or letters and special characters, based on your needs.
+of the available words from Urban Dictionary to date. 
 
 If you are reading this, you probably have a good reason for needing a 
 wordlist from urban dictionary, such as security, NLP, or just plain curiosity.
 
+At this point in time, UDWG will only get the most popular words from A-Z
+
 ## Usage
 
-At this point, the program is command line only, but there are plans to
-create a GUI in the future.
+At this point, the program is command line only
 
 This program is written in Python and is very easy to use, just simply type:
 
-    $> python uswg.py
+    $> python udwg.py
 
 And all words from Urban Dictionary will be printed out to STDOUT 
 
-if you would like just one letter, type:
-
-    $> python uswg.py A
-
-to get all the words that start with the letter 'A':
-
-if you would like a range, say 'B' through 'D', type:
-
-    $> python uswg.py B D
-
-Finally, if you would like words that what with special characters or numbers,
-use the '*' character, type:
-
-    $> python uswg.py \*
-
-Keep in mind that typing:
-
-    $> python uswg.py A \*
-
-is Equivalent to typing:
-
-    $> python uswg.py
+The words are all of the most popular words from Urban Dictionary from A to Z.
 
 ## Wordlist structure
 
 The structure of the file is like any other wordlist file, with a list of terms
 delimited by the newline character.
 
-At this time, no wordlist comes with the program, but I may attach one soon.
+A wordlist file is available called popular_words.txt in the repository.
 
 ##Disclaimer
 
@@ -62,5 +41,5 @@ I do not condone the use of this data for illicit purposes.
 
 I used the following versions of python and corresponding modules for testing.
 
-[Beautifulsoup 4.2.1](http://www.crummy.com/software/BeautifulSoup/)
-[Python 3.3.3](https://www.python.org/download/releases/3.0/)
+[BeautifulSoup 4.3.2](http://www.crummy.com/software/BeautifulSoup/)
+[Python 3.4.4](https://www.python.org/download/releases/3.0/)
