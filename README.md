@@ -26,7 +26,7 @@ The words are all of the most popular words from Urban Dictionary from A to Z.
 The structure of the file is like any other wordlist file, with a list of terms
 delimited by the newline character.
 
-A wordlist file is available called popular_words.txt in the repository.
+A wordlist file is available called `popular_words.txt` in the repository.
 
 ##Disclaimer
 
@@ -40,4 +40,5 @@ I do not condone the use of this data for illicit purposes.
 I used the following versions of python and corresponding modules for testing.
 
 [BeautifulSoup 4.3.2](http://www.crummy.com/software/BeautifulSoup/)
+
 [Python 3.4.4](https://www.python.org/download/releases/3.0/)
